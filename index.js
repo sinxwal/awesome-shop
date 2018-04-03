@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000
 
 const server = Hapi.server({
   host: 'localhost',
-  port,
+  port: port,
 })
 
 // Adding client route.
