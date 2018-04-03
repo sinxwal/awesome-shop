@@ -3,25 +3,24 @@
 const Hapi = require('hapi'),
     routes = require('./server/routes')
 
-const port = process.env.PORT || 5000
-const host = process.env.HOST || 'localhost';
 const server = Hapi.server({
-  host: host,
-  port: port,
+  host: '0.0.0.0',
+  port: process.env.PORT || 7000,
 })
 
-// Adding client route.
+// Adding client route
 server.route({
   method: 'GET',
   path: '/',
   handler: (request, h) => {
     return h.file('client/index.html')
   },
-});
+})
 
-// Adding server routes.
+// Adding server routes
 server.route(routes(server))
 
+// Bootstrap application
 const init = async () => {
   await server.register([
     require('inert'),
