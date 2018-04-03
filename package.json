@@ -7,7 +7,7 @@
     "inert": "^5.1.0"
   },
   "engines": {
-    "node": "8.11.1"
+    "node": "9.10.1"
   },
   "main": "index.js",
   "scripts": {
