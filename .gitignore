@@ -1,0 +1,10 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# ignore general files
+node_modules
