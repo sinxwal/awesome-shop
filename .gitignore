@@ -1,10 +1,9 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Optional npm cache directory
-.npm
-
-# ignore general files
+.idea
+*.iml
+npm-debug.log
+yarn-error.log
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
 node_modules
+client/build

@@ -8,14 +8,20 @@ const server = Hapi.server({
   port: process.env.PORT || 7000,
 })
 
-// Adding client route
-server.route({
+// Adding client routes
+server.route([{
   method: 'GET',
   path: '/',
   handler: (request, h) => {
     return h.file('client/index.html')
   },
-})
+}, {
+  method: 'GET',
+  path: '/bundle.js',
+  handler: (request, h) => {
+    return h.file('client/build/bundle.js')
+  },
+}])
 
 // Adding server routes
 server.route(routes(server))
