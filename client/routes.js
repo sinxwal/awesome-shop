@@ -4,13 +4,13 @@ const routes = (server) => [{
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    return h.file('dist/client/index.html')
+    return h.file('index.html')
   },
 }, {
   method: 'GET',
   path: '/bundle.js',
   handler: (request, h) => {
-    return h.file('dist/client/bundle.js')
+    return h.file('dist/bundle.js')
   },
 }, {
   method: 'GET',

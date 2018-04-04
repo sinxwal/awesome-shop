@@ -1,0 +1,16 @@
+:global {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.root {
+  padding: 40px;
+  background-color: #ccc;
+  text-align: center;
+
+  .title {
+    text-decoration: underline;
+  }
+}
