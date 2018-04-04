@@ -5,9 +5,15 @@ const serverRoutes = require('./server/routes')
 const clientRoutes = require('./client/routes')
 const environment = process.env.NODE_ENV
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
+
+const port = process.env.PORT || process.env.API_PORT || 8082
+
 const server = Hapi.server({
   host: '0.0.0.0',
-  port: process.env.PORT || 7000,
+  port,
 })
 
 // Bootstrap application
@@ -27,8 +33,6 @@ const init = async () => {
   if (environment === 'production') {
     server.route(clientRoutes(server))
   }
-
-  console.log('process.env', process.env);
 
   // Adding server routes
   server.route(serverRoutes(server))
