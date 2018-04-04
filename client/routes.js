@@ -4,7 +4,7 @@ const routes = (server) => [{
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    return h.file('index.html')
+    return h.file('dist/index.html')
   },
 }, {
   method: 'GET',
