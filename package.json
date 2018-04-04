@@ -6,14 +6,15 @@
     "hapi-pino": "^4.0.4",
     "inert": "^5.1.0",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react-dom": "^16.3.0",
+    "watchify": "^3.11.0"
   },
   "engines": {
     "node": ">=8.1.1"
   },
   "main": "index.js",
   "scripts": {
-    "build": "browserify client/src/index.js -o client/build/bundle.js  -t [ babelify --presets [ env react ] ]",
+    "build": "browserify client/src/index.js -o client/build/bundle.js -t [ babelify --presets [ env react ] ]",
     "clean": "rimraf client/build",
     "dev": "node index.js",
     "postinstall": "yarn run build"
