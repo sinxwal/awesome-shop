@@ -17,7 +17,7 @@ const routes = (server) => [{
   path: '/{param*}',
   handler: {
     directory: {
-      path: 'client/public'
+      path: 'client/assets'
     }
   }
 }];

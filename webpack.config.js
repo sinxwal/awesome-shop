@@ -10,7 +10,7 @@ const API_PORT = process.env.API_PORT;
 module.exports = (env, argv) => ({
   devServer: {
     https: true,
-    contentBase: path.join(__dirname, "client/public"),
+    contentBase: path.join(__dirname, "client/assets"),
     compress: true,
     port: 8080,
     proxy: {
