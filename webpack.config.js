@@ -24,11 +24,13 @@ module.exports = (env, argv) => ({
           loader: 'babel-loader'
         }
       }, {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {}
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
           }
         ]
       }, {
@@ -56,7 +58,7 @@ module.exports = (env, argv) => ({
   },
   "plugins":[
     new HtmlWebPackPlugin({
-      template: "./client/index.html",
+      template: "./client/src/index.html",
       filename: "index.html"
     })
   ]
