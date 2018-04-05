@@ -10,7 +10,7 @@ const appStore = new AppStore()
 const App = () => (
   <Provider appStore={appStore}>
     <div className={styles.root}>
-      <h2 className={styles.title}>Hello world!</h2>
+      <h2 className={styles.myTitle}>Hello world!</h2>
       <Page />
     </div>
   </Provider>

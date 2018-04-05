@@ -4,10 +4,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const isProd = function() {
-  return (process.env.NODE_ENV === 'production') ? true : false;
-};
-
 module.exports = (env, argv) => ({
   entry: './client/src/index.js',
   output: {
@@ -43,6 +39,7 @@ module.exports = (env, argv) => ({
         }, {
           loader: 'css-loader',
           options: {
+            camelCase: 'dashes',
             modules: true,
             importLoaders: 1,
             localIdentName: '[name]__[local]__[hash:base64:5]'
