@@ -1,10 +1,22 @@
 'use strict'
 
+require('dotenv').load();
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const API_PORT = process.env.API_PORT;
 
 module.exports = (env, argv) => ({
+  devServer: {
+    https: true,
+    contentBase: path.join(__dirname, "client/public"),
+    compress: true,
+    port: 8080,
+    proxy: {
+      "/api": `http://localhost:${API_PORT}`
+    }
+  },
   entry: './client/src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
